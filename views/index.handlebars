@@ -1,0 +1,50 @@
+<header  class="text-center">
+   <h1>TRY THE <strong>IMPOSSIBLE BURGER</strong></h1>
+</header>
+
+<div class="container" id="mainContainer">
+   <div class="row">
+      <div class="col-md-6 col-sm-12">
+         <div class="row" id="box">
+            <div class="col-md-12 col-sm-12 text-center ">
+              <div><h2>Enter a Burger you want to eat: </h2>
+                <form id="addburger" class="button-size">
+                  <textarea type="text" data-burger="{{this.text}}"></textarea>
+                  <button type="submit" class="submit">ORDER</button>
+                  <button type="submit" class="menu">VIEW FULL MENU</button>
+                </form>
+            </div>
+          <div class="row" class="smallBox">
+             <div class="col-md-7 col-sm-12" id="leftBox">
+              <ul>
+                  {{#each burgers}}
+                    <li>
+                      <p>
+                        {{this.id}}. {{this.burger_name}}
+                        <button data-burgerid="{{this.id}}" class="devour">Devour it!</button>
+                      </p>
+                    </li>
+                  {{/each}}
+                </ul>
+             </div>
+              <div class="col-md-5 col-sm-12" id="rightBox">
+                <ul>
+                  {{#each burgers}}
+                    <li>
+                      <p>
+                        {{this.id}}. {{this.burger_name}}
+                     </p>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+          </div>
+      </div>
+      </div>
+   </div>
+   </div>
+ </div>
+
+
+
+

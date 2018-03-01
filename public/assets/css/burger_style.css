@@ -1,0 +1,37 @@
+body{
+	background-color: #ebeef3;
+	background-image: url("../img/burger.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: right;
+    height:600px; 
+    font-family: 'PT Serif', serif;
+}
+
+header{
+	/* background-color:white; */
+	 color:black;
+	padding-top:1px;
+	margin-bottom:25px;
+}
+
+#box{
+	border:1px solid white;
+     min-height:500px;
+}
+
+#leftBox{
+	float:left;
+	border:1px solid white;
+}
+
+#rightBox{
+	float:left;
+	border:1px solid white;
+}
+
+.smallBox{
+	margin-top:35px;
+	border:1px solid black;
+}
