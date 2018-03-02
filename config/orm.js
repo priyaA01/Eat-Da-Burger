@@ -34,11 +34,11 @@ function objToSql(ob) {
 
 //object methods that will execute the necessary MySQL commands in the controllers
 var orm={
-	selectAll : function (all,tableName,cb){
-		var queryStr="SELECT ?? FROM ??";
+	selectAll : function (tableName,cb){
+		var queryStr="SELECT * FROM ??";
 		//console.log(queryStr);
 		
-		connection.query(queryStr,[all,tableName],function(err,result)
+		connection.query(queryStr,[tableName],function(err,result)
 		{
 			if(err)
 				console.log(err);
