@@ -64,7 +64,7 @@ var orm={
 		{
 			if(err)
 				console.log(err);
-			console.log(result);
+			//console.log(result);
 			cb(result); 
 		});
 		}
@@ -82,18 +82,31 @@ var orm={
 		{
 			if(err)
 				console.log(err);
-			console.log(result);
+			//console.log(result);
 			cb(result); 
 		});
 	},
+	/*selectDevoured : function (tableName,cb){
+		var queryStr="SELECT count(*) FROM ?? ";
+		//console.log(queryStr);
+		
+		connection.query(queryStr,[tableName],function(err,result)
+		{
+			if(err)
+				console.log(err);
+			//console.log(result);
+			cb(result); 
+		});
+	},
+*/
 
-	deleteAll : function(tableName, cb){
-		var queryString = "DELETE FROM " + tableName ;
+	deleteAll : function(tableName,limit, cb){
+		var queryString = "DELETE FROM " + tableName +" LIMIT " +  limit;
 		connection.query(queryString, function(err,result)
 		{
 			if(err)
 				console.log(err);
-			console.log(result);
+			//console.log(result);
 			cb(result); 
 		});
 

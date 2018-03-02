@@ -20,12 +20,19 @@ var burger={
 			cb(result);
 		});
 	},
-	del: function(cb)
+	del: function(limit,cb)
 	{
-		orm.deleteAll("burgers", function(result){
+		orm.deleteAll("burgers",limit, function(result){
 			cb(result);
 		});
-	}
+	},
+
+	/*limit : function(cb)
+	{
+		orm.selectDevoured("burgers",function(result){
+			cb(result);
+		});
+	}*/
 
 
 };

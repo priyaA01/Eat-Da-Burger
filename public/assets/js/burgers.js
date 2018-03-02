@@ -42,4 +42,11 @@ $(function(){
 
   });
 
+
 });
+
+ // Delete a 
+  /*app.post("/api/delete", function(req, res) {
+    console.log("inside delete check");
+     return res.json(true);
+    });*/

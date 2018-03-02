@@ -46,21 +46,22 @@ router.put("/api/burger/:id", function(req, res) {
   });
 });
 
-
+router.post("/api/delete", function(req, res) {
+  /*burger.limit(function(data) {
+    console.log("count " + data);
+    if(data === 3)
+        {*/
+          burger.del(3,function(result) {
+            if (result.changedRows == 0) {
+              return res.status(404).end();
+            } else {
+              res.status(200).end();
+            }
+          });
+        /*}
+  })*/;
+});
 
 // Export routes for server.js to use.
 module.exports = router;
 
-
-/*if(result.changedRows === 3)
-    {
-      burger.delete(function(result){
-        if (result.changedRows == 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return res.status(404).end();
-        } else {
-          res.status(200).end();
-          
-        }
-      }) ;
-    }*/
