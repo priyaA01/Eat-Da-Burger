@@ -1,33 +1,33 @@
-body{
+body {
 	background-color: #ebeef3;
 	background-image: url("../img/burger.jpg");
 	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-    background-position: right;
-    font-family: 'PT Serif', serif;
+	background-attachment: fixed;
+	background-size: contain;
+	background-position: right;
+	font-family: 'PT Serif', serif;
 }
 
-header{
-	/* background-color:white;  */
-	color:black;
-	margin-bottom:25px;
+header {
+	color: black;
+	margin-bottom: 25px;
 }
 
-#box{
-	border:1px solid white;
-    min-height:500px;
-    border-radius: 5px;
+#box {
+	border: 1px solid white;
+	min-height: 500px;
+	border-radius: 5px;
 }
-.create-form,.burgerbox
-{
-	padding:20px;
+
+.create-form,
+.burgerbox {
+	padding: 20px;
 }
-#order{
-	border:1px solid white;
+
+#order {
+	border: 1px solid white;
 }
+
 input[type="text"] {
-    width: 250px;
+	width: 250px;
 }
-
-
