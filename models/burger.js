@@ -19,13 +19,13 @@ var burger={
 		orm.updateOne("burgers", condition,function(result){
 			cb(result);
 		});
-	},
-	del: function(limit,cb)
+	}
+	/*del: function(limit,cb)
 	{
 		orm.deleteAll("burgers",limit, function(result){
 			cb(result);
 		});
-	},
+	},*/
 
 	/*limit : function(cb)
 	{

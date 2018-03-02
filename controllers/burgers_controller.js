@@ -46,11 +46,11 @@ router.put("/api/burger/:id", function(req, res) {
   });
 });
 
-router.post("/api/delete", function(req, res) {
+/*router.post("/api/delete", function(req, res) {
   /*burger.limit(function(data) {
     console.log("count " + data);
     if(data === 3)
-        {*/
+        {
           burger.del(3,function(result) {
             if (result.changedRows == 0) {
               return res.status(404).end();
@@ -58,9 +58,9 @@ router.post("/api/delete", function(req, res) {
               res.status(200).end();
             }
           });
-        /*}
-  })*/;
-});
+        }
+  });
+});*/
 
 // Export routes for server.js to use.
 module.exports = router;

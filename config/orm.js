@@ -98,7 +98,7 @@ var orm={
 			cb(result); 
 		});
 	},
-*/
+
 
 	deleteAll : function(tableName,limit, cb){
 		var queryString = "DELETE FROM " + tableName +" LIMIT " +  limit;
@@ -110,7 +110,7 @@ var orm={
 			cb(result); 
 		});
 
-	}
+	}*/
 };
 
 //Export the ORM object
