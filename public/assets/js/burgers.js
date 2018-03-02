@@ -1,12 +1,14 @@
 $(function(){
-  $(".submit").on("click", function(event) {
+  $(".create-form").on("submit", function(event) {
      event.preventDefault();
-   
-    var name = $(this).data("burger");
+  
+    var newBurger = {
+      name: $("#bn").val().trim()
+    };
 
-    // Send the POST request.
-    $.ajax("/api/burger/" , {
-      data : name,
+    // Send the POST request.submit
+    $.ajax("/api/burger" , {
+      data : newBurger,
       type: "POST"
    }).then(
       function() {
@@ -17,19 +19,25 @@ $(function(){
 
   });
 
-  $(".devour").on("click", function(event) {
-    var id = $(this).data("id");
-    var devoured =true;
 
+  $(".devour").on("click", function(event) {
+    event.preventDefault();
+     var burgerId = $(this).data("burgerid");
+    var burger={
+      id:burgerId,
+      };
+    
     // Send the POST request.
-    $.ajax("/api/burger/" + id, {
+    $.ajax("/api/burger/" + burgerId, {
       type: "PUT",
-      data: devoured
+      data: burger
    }).then(
       function() {
         console.log("Burger");
         // Reload the page to get the updated list
         location.reload();
+        
+    
         });
 
   });

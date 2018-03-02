@@ -20,7 +20,8 @@ function objToSql(ob) {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')printQuestionMarks
+      //f string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')printQuestionMarks
+
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
@@ -35,13 +36,13 @@ function objToSql(ob) {
 var orm={
 	selectAll : function (all,tableName,cb){
 		var queryStr="SELECT ?? FROM ??";
-		console.log(queryStr);
+		//console.log(queryStr);
 		
 		connection.query(queryStr,[all,tableName],function(err,result)
 		{
 			if(err)
 				console.log(err);
-			console.log(result);
+			//console.log(result);
 			cb(result); 
 		});
 	},
@@ -55,25 +56,27 @@ var orm={
 	    queryString += printQuestionMarks(vals.length);
 	    queryString += ") ";
 
-	    console.log(queryStr);
-	
-		connection.query(queryString,vals,function(err,result)
+	    console.log(queryString);
+	    console.log(vals);
+		if(vals != "")
+		{
+			connection.query(queryString,[vals,false],function(err,result)
 		{
 			if(err)
 				console.log(err);
 			console.log(result);
-			cb(result.id); 
+			cb(result); 
 		});
+		}
+		
 	},
 
-	updateOne : function (tableName,objColVals, condition,cb){
+	updateOne : function (tableName, condition,cb){
 		var queryString = "UPDATE " + tableName;
-		queryString += " SET burger_name=";
-	    queryString += objToSql(objColVals);
-	    queryString += " WHERE id=";
+		queryString += " SET devoured = true WHERE ";
 	    queryString += condition;
 
-	    console.log(queryStr);
+	    console.log(queryString);
 		
 		connection.query(queryString,function(err,result)
 		{
@@ -82,6 +85,18 @@ var orm={
 			console.log(result);
 			cb(result); 
 		});
+	},
+
+	deleteAll : function(tableName, cb){
+		var queryString = "DELETE FROM " + tableName ;
+		connection.query(queryString, function(err,result)
+		{
+			if(err)
+				console.log(err);
+			console.log(result);
+			cb(result); 
+		});
+
 	}
 };
 

@@ -7,36 +7,36 @@
       <div class="col-md-6 col-sm-12">
          <div class="row" id="box">
             <div class="col-md-12 col-sm-12 text-center ">
-              <div><h2>Enter a Burger you want to eat: </h2>
-                <form id="addburger" class="button-size">
-                  <textarea type="text" data-burger="{{this.text}}"></textarea>
-                  <button type="submit" class="submit">ORDER</button>
-                  <button type="submit" class="menu">VIEW FULL MENU</button>
+              <!-- <h2>Enter a Burger you want to eat: </h2> -->
+                <form  class="create-form">
+                  <textarea class="form-control" type="text" id="bn"  name="name" rows="2" cols="30" autofocus placeholder="Type Your Burger Choice"></textarea><br>
+                  <button type="submit" class="btn btn-default btn-default submit">ORDER</button>                
                 </form>
-            </div>
-          <div class="row" class="smallBox">
-             <div class="col-md-7 col-sm-12" id="leftBox">
-              <ul>
-                  {{#each burgers}}
-                    <li>
-                      <p>
-                        {{this.id}}. {{this.burger_name}}
-                        <button data-burgerid="{{this.id}}" class="devour">Devour it!</button>
-                      </p>
-                    </li>
-                  {{/each}}
-                </ul>
+          <div class="row">
+             <div class="col-md-12 col-sm-12 burgerbox" id="order" >
+              <form  class="update-form">
+                                  
+                    {{#each burgers}}
+                      {{#unless devoured}}
+                      <input type="text" value="{{id}}. {{burger_name}}" disabled>
+                        <button data-burgerid="{{id}}" class="btn btn-default devour">Eat up</button>
+                        </p>
+                      {{/unless}}
+
+                    {{/each}}
+                  
+                </form>
              </div>
-              <div class="col-md-5 col-sm-12" id="rightBox">
-                <ul>
-                  {{#each burgers}}
-                    <li>
-                      <p>
-                        {{this.id}}. {{this.burger_name}}
-                     </p>
-                    </li>
-                  {{/each}}
-                </ul>
+              <div class="col-md-12 col-sm-12 burgerbox" >
+                  <ul>
+                    {{#each burgers}}
+                      {{#if devoured}}
+                      <input type="text" value="{{this.id}}. {{this.burger_name}}" disabled>
+                      <br>
+                      {{/if}}
+                     
+                    {{/each}}
+                  </ul>
               </div>
           </div>
       </div>
@@ -45,6 +45,33 @@
    </div>
  </div>
 
+ <!-- Modal -->
+ 
+    <div id="results-modal" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h2 class="modal-title">MENU</h2>
+               </div>
+               <div class="modal-body">
+                  <ul>
+                    {{#each burgers}}
+                      {{#if devoured}}
+                      <input type="text" name="devB" value="{{this.id}}. {{this.burger_name}}" disabled>
+                      <br>
+                      {{/if}}
+                     
+                    {{/each}}
+                  </ul>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
 
 
 

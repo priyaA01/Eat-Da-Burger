@@ -5,33 +5,29 @@ body{
     background-attachment: fixed;
     background-size: contain;
     background-position: right;
-    height:600px; 
     font-family: 'PT Serif', serif;
 }
 
 header{
-	/* background-color:white; */
-	 color:black;
-	padding-top:1px;
+	/* background-color:white;  */
+	color:black;
 	margin-bottom:25px;
 }
 
 #box{
 	border:1px solid white;
-     min-height:500px;
+    min-height:500px;
+    border-radius: 5px;
 }
-
-#leftBox{
-	float:left;
+.create-form,.burgerbox
+{
+	padding:20px;
+}
+#order{
 	border:1px solid white;
 }
-
-#rightBox{
-	float:left;
-	border:1px solid white;
+input[type="text"] {
+    width: 250px;
 }
 
-.smallBox{
-	margin-top:35px;
-	border:1px solid black;
-}
+
