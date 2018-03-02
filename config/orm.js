@@ -71,7 +71,16 @@ var orm = {
 			cb(result);
 		});
 	},
-	
+
+	deleteAll: function(tableName, cb) {
+		var queryStr = "DELETE FROM ??";
+		
+		connection.query(queryStr, [tableName], function (err, result) {
+			if (err)
+				console.log(err);
+			cb(result);
+		});
+	}
 };
 
 //Export the ORM object

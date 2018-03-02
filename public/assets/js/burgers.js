@@ -1,5 +1,5 @@
 $(function () {
-  $(".create-form").on("submit", function (event) {
+  $(".create-form").on("submit",  function (event) {
     event.preventDefault();
 
     //new burger value
@@ -37,5 +37,19 @@ $(function () {
         // Reload the page to get the updated list
         location.reload();
       });
+  });
+
+   $(".create-form").on("click",".clear", function (event) {
+    event.preventDefault();
+
+     // Send the DELETE request.submit
+    $.ajax("/api/", {
+      type: "DELETE"
+    }).then(
+      function () {
+        // Reload the page to get the updated list
+        location.reload();
+      });
+
   });
 });
